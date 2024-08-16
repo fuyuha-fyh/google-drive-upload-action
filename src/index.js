@@ -112,4 +112,4 @@ async function main() {
     }
 }
 
-main().catch((error) => actions.setFailed(error));
+main().then((res) => actions.setOutput('uploaded_file_id', res.data.id)).catch((error) => actions.setFailed(error));
